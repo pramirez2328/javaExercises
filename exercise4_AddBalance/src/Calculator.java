@@ -14,12 +14,6 @@ public class Calculator {
                 (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfMonths)) /
                 (Math.pow(1 + monthlyInterestRate, numberOfMonths) - 1);
 
-        // Display the results
-        System.out.println("\n--- Mortgage Calculation ---");
-        System.out.printf("Monthly interest rate: %.6f\n", monthlyInterestRate);
-        System.out.println("Number of months: " + numberOfMonths);
-        System.out.printf("Monthly payment: $%.2f\n", monthlyPayment);
-        System.out.printf("Your balance is $%.2f.\n", balance);
 
         for (int recurringPayment = 1; recurringPayment <= numberOfMonths; recurringPayment++) {
 
@@ -33,10 +27,14 @@ public class Calculator {
 
             System.out.printf("Your balance after payment #%d is $%.2f.\n", recurringPayment, balance);
         }
-        System.out.println("\n Congratulations your balance is 0! \n");
+        // Display the results
+        System.out.println("\n--- Mortgage Calculation ---");
+        System.out.println("Annual interest rate: " + annualInterestRate + "%");
+        System.out.println("Number of months: " + numberOfMonths);
+        System.out.printf("Monthly payment: $%.2f\n", monthlyPayment);
         System.out.println("Initial loan:" + principal);
         System.out.printf("Real final amount paid after interest: $%.2f.\n", realAmountPaid);
         System.out.printf("---YOU PAID: $%.2f ON INTEREST---\n", (realAmountPaid - principal));
-        System.out.printf("---Your loan cost you $%.2f every month---", (realAmountPaid - principal) / numberOfMonths);
+        System.out.printf("---YOUR LOAN COST YOU $%.2f EVERY MONTH!---\n\n", (realAmountPaid - principal) / numberOfMonths);
     }
 }
