@@ -9,6 +9,7 @@ public class MortgageCalculator {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        System.out.println("Welcome to mortgage calculator");
         // Principal
         int principal = InputValidation.getPositiveNumber(
                 input,
