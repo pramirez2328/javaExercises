@@ -1,4 +1,5 @@
 public class Employee {
+    static int numberOfEmployees;
     private String name;
     private int age;
     private String department;
@@ -12,9 +13,15 @@ public class Employee {
         this.department = department;
         this.hourlyRate = hourlyRate;
         this.hoursWorked = hoursWorked;
+        numberOfEmployees++;
     }
 
     public Employee() {
+        numberOfEmployees++;
+    }
+
+    public static int getNumberOfEmployees() {
+        return numberOfEmployees;
     }
 
     // setters and getters
