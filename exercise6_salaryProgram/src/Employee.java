@@ -6,10 +6,22 @@ public class Employee {
     private int hourlyRate;
     private int hoursWorked;
 
+    public Employee(String name, int age, String department, int hourlyRate, int hoursWorked) {
+        this.name = name;
+        this.age = age;
+        this.department = department;
+        this.hourlyRate = hourlyRate;
+        this.hoursWorked = hoursWorked;
+    }
+
+    public Employee() {
+    }
+
     // setters and getters
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -17,6 +29,7 @@ public class Employee {
     public int getAge() {
         return age;
     }
+
     public void setAge(int age) {
         this.age = age;
     }
@@ -24,6 +37,7 @@ public class Employee {
     public String getDepartment() {
         return department;
     }
+
     public void setDepartment(String department) {
         this.department = department;
     }
@@ -31,6 +45,7 @@ public class Employee {
     public int getHourlyRate() {
         return hourlyRate;
     }
+
     public void setHourlyRate(int hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
@@ -38,6 +53,7 @@ public class Employee {
     public int getHoursWorked() {
         return hoursWorked;
     }
+
     public void setHoursWorked(int hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
