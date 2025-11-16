@@ -6,7 +6,7 @@ import View.StudentGradesView;
 
 
 public class StudentGradesSystem {
-    void main(String[] args) {
+    public static void main(String[] args) {
         InputValidator inputValidator = new InputValidator();
         StudentGradesView studentGradesView = new StudentGradesView();
         studentGradesView.displayWelcome();
@@ -18,7 +18,6 @@ public class StudentGradesSystem {
 
 
         Student student = new Student(studentName, studentAssignmentGrade, studentMidTermGrade, studentFinalTermGrade);
-        student.setGrade();
 
         studentGradesView.displayGrades(student);
         studentGradesView.displayGoodbye();

@@ -32,6 +32,7 @@ public class Student {
     }
 
     public String getGrade() {
+        setGrade();
         return grade;
     }
 
