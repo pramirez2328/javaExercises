@@ -2,10 +2,8 @@ package CarsView;
 
 import Model.Car;
 
-;
-
 public class CarView {
-    Car car;
+    private final Car car;
 
     public CarView(Car car) {
         this.car = car;
@@ -20,20 +18,15 @@ public class CarView {
         System.out.println("Color: " + car.getColor());
     }
 
-    public void messageAFterBuyingACar() {
+    public void messageAfterBuyingACar() {
         System.out.println("Thank you for buying " + car.getModel());
     }
 
     public void messageIfCarIsNotAvailable() {
-        System.out.println("Sorry, this car is not available");
+        System.out.println("Sorry, the " + car.getModel() + " is not available");
     }
 
     public void messageIfCarIsAvailable() {
-        System.out.println("This car is available");
+        System.out.println("The " + car.getModel() + " is available");
     }
-
-    public void welcomeMessage() {
-        System.out.println("Welcome to the car shop!");
-    }
-
 }

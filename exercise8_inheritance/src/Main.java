@@ -1,26 +1,44 @@
 import Cars.Mustang;
 import Cars.Sonata;
 import CarsView.CarView;
+import Inventory.CarInventory;
 
 void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
+    CarInventory inventory = new CarInventory();
+    inventory.welcomeMessage();
 
     Sonata sonata = new Sonata();
     Mustang mustang = new Mustang();
-    System.out.println("There are " + mustang.getNumberOfCarsAvailable() + " " + mustang.getBrand() + " available");
-    System.out.println("There are " + sonata.getNumberOfCarsAvailable() + " " + sonata.getBrand() + " available");
+
+    // Initialize inventory
+    inventory.addStock("Mustang", 0);
+    inventory.addStock("Sonata", 1);
+
+    System.out.println("There are " + inventory.getStock("Mustang") + " " + mustang.getBrand() + " available");
+    System.out.println("There are " + inventory.getStock("Sonata") + " " + sonata.getBrand() + " available");
+
     CarView sonataView = new CarView(sonata);
     CarView mustangView = new CarView(mustang);
 
     sonataView.printCarInformation();
     System.out.println("--------------");
     mustangView.printCarInformation();
+    System.out.println("--------------");
 
-    mustang.buyCar();
-    sonata.buyCar();
+    // Buy cars
+    if (inventory.buyCar("Mustang")) {
+        mustangView.messageAfterBuyingACar();
+    } else {
+        mustangView.messageIfCarIsNotAvailable();
+    }
 
-    System.out.println("There are " + mustang.getNumberOfCarsAvailable() + " " + mustang.getBrand() + " available");
-    System.out.println("There are " + sonata.getNumberOfCarsAvailable() + " " + sonata.getBrand() + " available");
+    if (inventory.buyCar("Sonata")) {
+        sonataView.messageAfterBuyingACar();
+    } else {
+        sonataView.messageIfCarIsNotAvailable();
+    }
 
+    System.out.println("--------------");
+    System.out.println("There are " + inventory.getStock("Mustang") + " " + mustang.getBrand() + " available");
+    System.out.println("There are " + inventory.getStock("Sonata") + " " + sonata.getBrand() + " available");
 }
